@@ -1,0 +1,84 @@
+body {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+
+#container {
+    background-color: #999;
+    width: 500px;
+    height: 500px;
+    margin: 50px auto;
+    border-radius: 7px;
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+}
+
+#grow {
+    flex-grow: 1;
+}
+
+#box {
+    width: 60%;
+    height: fit-content;
+    border-radius: 7px;
+    align-self: center;
+    visibility: hidden;
+    margin: 30px auto;
+    border: 1px solid #fafafa;
+}
+
+#tx {
+    text-align: center;
+    padding: 30px;
+}
+
+#send-div {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 30px;
+}
+
+#amount {
+    height: 30px;
+    width: 120px;
+    border-radius: 4px;
+    border: 1px solid #000;
+    padding: 4px 4px 4px 8px;
+}
+
+#send {
+    width: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#loading-container {
+    width: 50%;
+}
+
+#loading-bar {
+    width: 80%;
+}
+
+#send:active {
+    cursor: wait;
+}
+
+#balance {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Remove the arrows in Chrome, Safari, Edge, and Opera */
+.no-arrows::-webkit-outer-spin-button,
+.no-arrows::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

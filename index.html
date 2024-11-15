@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>koinos api</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="grow"></div>
+        <div id="box">
+            <div id="tx"></div>
+        </div>
+        <div id="loading-container" style="display: none;">
+            <div id="loading-bar" style="width: 0%; height: 20px; background-color: rgb(179, 0, 255);"></div>
+            <div id="timer"></div>
+        </div>
+        <div id="send-div">
+            <input type="number" id="amount" class="no-arrows" placeholder="Amount to send">
+            <button id="send">Send</button>
+        </div>
+        <div id="balance"></div>
+    </div>
+    <script src="js/koinos.js"></script>
+    <script type="module" src="js/script.js"></script>
+</body>
+
+</html>
