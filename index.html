@@ -10,7 +10,7 @@
 
 <body>
     <div id="container">
-        <div id="grow"></div>
+        <h1 id="grow">THE KOIN MASTER</h1>
         <div id="box">
             <div id="tx"></div>
         </div>
@@ -19,11 +19,22 @@
             <div id="timer"></div>
         </div>
         <div id="send-div">
-            <input type="number" id="amount" class="no-arrows" placeholder="Amount to send">
+            <input type="text" id="address" class="input" placeholder="Address">
+            <input type="number" id="amount" class="no-arrows input" placeholder="Amount">
             <button id="send">Send</button>
         </div>
         <div id="balance"></div>
     </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-amount"></div>
+            <div id="modal-tx"></div>
+            <div id="md-button"></div>
+        </div>
+    </div>
+    <!-- ./The Modal -->
     <script src="js/koinos.js"></script>
     <script type="module" src="js/script.js"></script>
 </body>
