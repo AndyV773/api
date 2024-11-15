@@ -87,7 +87,29 @@ const koinTestId = "1EdLyQ67LW6HVU1dWoceP4firtyz77e37Y";
         from: await signer.getAddress(),  // Ensure getAddress is async if needed
         to: recipient,                    // Make sure `recipient` is defined
         value: amountToSend               // Value in smallest unit (e.g., 10.12345678 koin)
+      }, {
+        rcLimit: '100000000'             // Specify the RC limit here
       });
+
+      console.log('Receipt:', receipt);
+
+      function addNewlineInMiddle(hashId) {
+        if (!hashId) return ""; // Handle empty input
+
+        // Calculate the middle index
+        const middleIndex = Math.floor(hashId.length / 2);
+
+        // Split the string into two parts and insert the newline
+        const firstPart = hashId.slice(0, middleIndex);
+        const secondPart = hashId.slice(middleIndex);
+
+        // Combine the parts with a newline character
+        return firstPart + '\n' + secondPart;
+      }
+
+      const hashId = receipt.id;
+      const splitTx = addNewlineInMiddle(hashId);
+      console.log(splitTx);
 
       // Update loading bar to show progress
       updateLoadingBar(50);
@@ -101,7 +123,7 @@ const koinTestId = "1EdLyQ67LW6HVU1dWoceP4firtyz77e37Y";
       // Display the block number in the div with ID 'tx'
       txBox.style.background = "#00800045";
       txBox.style.visibility = 'visible';
-      document.getElementById('tx').innerText = `Transaction mined. Block number: ${blockNumber}`;
+      document.getElementById('tx').innerText = `Transaction mined. Block number: ${blockNumber}\n\nTx Id: ${splitTx}`;
       console.log(`Transaction mined. Block number: ${blockNumber}`);
 
       // Read the balance of the owner after the transaction
